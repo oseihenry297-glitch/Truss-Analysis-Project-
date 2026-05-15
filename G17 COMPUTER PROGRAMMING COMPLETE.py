@@ -5,10 +5,8 @@ Created on Mon May 11 22:16:08 2026
 @author: henos
 """
 
-# ================================================
+
 # 2D Truss Analysis App - Method of Joints
-# KNUST Civil Engineering - Year 2
-# ================================================
 
 import numpy as np
 import tkinter as tk
@@ -19,7 +17,6 @@ from matplotlib.figure import Figure
 
 # ================================================
 # CLASSES
-# ================================================
 
 class Joint:
     """Stores the properties of a single joint in the truss"""
@@ -78,7 +75,7 @@ memberList = []   # list of Member objects
 
 # ================================================
 # HELPER FUNCTION
-# ================================================
+
 
 def findJoint(name):
     """Searches jointList and returns the joint with the given name"""
@@ -88,9 +85,8 @@ def findJoint(name):
     return None   # return None if not found
 
 
-# ================================================
+
 # SOLVER - Method of Joints (Matrix Form)
-# ================================================
 
 def solveTruss(virtualLoad=None):
     """
@@ -170,9 +166,9 @@ def solveTruss(virtualLoad=None):
     return solution
 
 
-# ================================================
+
 # DEFLECTION - Virtual Work Method
-# ================================================
+
 
 def getDeflection(targetJointName, direction):
     """
@@ -221,9 +217,9 @@ def getDeflection(targetJointName, direction):
     return delta
 
 
-# ================================================
+
 # PLOT FUNCTION
-# ================================================
+
 
 def drawTruss(memberForces=None, deflections=None):     
     """
@@ -327,9 +323,9 @@ def drawTruss(memberForces=None, deflections=None):
     canvas.get_tk_widget().pack(fill="both", expand=True)
 
 
-# ================================================
+
 # BUTTON COMMANDS
-# ================================================
+
 
 def cmdAddJoint():
     """Reads joint inputs and adds a new Joint to jointList"""
@@ -497,9 +493,9 @@ def cmdClearAll():
     messagebox.showinfo("Cleared", "All data has been cleared.")
 
 
-# ================================================
+
 # GUI LAYOUT
-# ================================================
+
 
 app = tk.Tk()
 app.title("2D Truss Analysis App - Method of Joints")
@@ -623,8 +619,8 @@ plotFrame = tk.LabelFrame(rightPanel, text="Truss Diagram",
                            padx=5, pady=5)
 plotFrame.pack(fill="both", expand=True, padx=8, pady=8)
 
-# ================================================
+
 # START THE APP
-# ================================================
+=
 
 app.mainloop()
